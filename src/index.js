@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//import $ from "jquery";
 import { ApolloProvider } from 'react-apollo-hooks';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
