@@ -5,6 +5,7 @@ import Layout from '../common/Layout';
 import {Link} from 'react-router-dom';
 import authenticate from '../utils/authenticate';
 import authHOC from '../utils/authHOC';
+import { Redirect } from 'react-router-dom';
 
 const SINGLE_CONTACT = gql`
     query getOneContact($id:ID!){
@@ -23,7 +24,7 @@ const DELETE_CONTACT = gql`
     }
 `;
 
-function DeleteContact({match}){
+function DeleteContact({match, history}){
     const { isAuthenticated, payload } = authenticate();
     const [ deleteOneContact ] = useMutation(DELETE_CONTACT);
 
@@ -50,10 +51,11 @@ function DeleteContact({match}){
             <form>
                 <div className="clearfix mt-4">
                     <button type="button" className="btn btn-danger" 
-                    onClick={() => {
-                        deleteOneContact({variables: {id}}).then(
-                            () => { window.location.href = '/contactos'; }
-                        )
+                    onClick={(e) => {
+                        e.preventDefault();
+                        deleteOneContact({variables: {id}}).then(() => {
+                            window.location.href = "/contacts";
+                        })
                     }}
                     >Eliminar</button>
                     <Link className="btn btn-light" to="/contacts" >Cancelar</Link>

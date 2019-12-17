@@ -8,7 +8,7 @@ import Footer from './Footer';
 function Layout({head, subheading, children}) {
     return (
         <>
-        <Navbar title="Postealo" />
+        <Navbar title="CRM B36" />
         {/* <Head title={head} subheading={subheading} /> */}
         {/* {children} */}
         <div id="wrapper">

@@ -9,12 +9,9 @@ import { Link } from 'react-router-dom';
 
 const UPDATE_CONTACT = gql`
 
-    mutation updateContact($id:ID!, $contacto:ContactInputUpdate!){
-        updateOneContact(id:$id, data:$contacto){
+    mutation updateContact($id:ID!, $data:ContactInputUpdate!){
+        updateOneContact(id:$id, data:$data){
             _id
-            first_name
-            last_name
-            title
         }
     }
 
@@ -24,7 +21,6 @@ const GET_CONTACT = gql`
 
     query getOneContact($id:ID!){
         getSingleContact(id:$id){
-            _id
             first_name
             last_name
             title

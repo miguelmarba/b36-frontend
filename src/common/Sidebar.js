@@ -12,14 +12,10 @@ function Sidebar(props){
                 <Link className="nav-link" to="/contacts">Contacts</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="charts.html">
-                <i className="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+                <Link className="nav-link" to="/contacts">Tareas</Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link" href="tables.html">
-                <i className="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <Link className="nav-link" to="/contacts">Clientes</Link>
             </li>
             <li className="nav-item">
                 <Link className="nav-link" to="/logout">Cerrar sesión</Link>

@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo-hooks';
 import ClientPreview from '../components/ClientPreview';
 import Layout from '../common/Layout';
+import { Link } from 'react-router-dom';
 
 const ALL_CLIENTS =  gql`
     query getAllPosts{
@@ -43,14 +44,14 @@ function Home(){
                             <div class="card-body-icon">
                             <i class="fas fa-fw fa-comments"></i>
                             </div>
-                            <div class="mr-5">26 New Messages!</div>
+                            <div class="mr-5">26 nuevos Contactos!</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
-                            <span class="float-left">View Details</span>
-                            <span class="float-right">
-                            <i class="fas fa-angle-right"></i>
+                        <Link className="card-footer text-white clearfix small z-1" to="/contacts">
+                            <span class="float-left">Ver detalles</span>
+                                <span class="float-right">
+                                <i class="fas fa-angle-right"></i>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-3">
@@ -59,14 +60,14 @@ function Home(){
                             <div class="card-body-icon">
                             <i class="fas fa-fw fa-list"></i>
                             </div>
-                            <div class="mr-5">11 New Tasks!</div>
+                            <div class="mr-5">11 Nuevas Tareas!</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
-                            <span class="float-left">View Details</span>
-                            <span class="float-right">
-                            <i class="fas fa-angle-right"></i>
+                        <Link className="card-footer text-white clearfix small z-1" to="/contacts">
+                            <span class="float-left">Ver detalles</span>
+                                <span class="float-right">
+                                <i class="fas fa-angle-right"></i>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div class="col-xl-3 col-sm-6 mb-3">
@@ -75,36 +76,17 @@ function Home(){
                             <div class="card-body-icon">
                             <i class="fas fa-fw fa-shopping-cart"></i>
                             </div>
-                            <div class="mr-5">123 New Orders!</div>
+                            <div class="mr-5">123 Nuevos clientes!</div>
                         </div>
-                        <a class="card-footer text-white clearfix small z-1" href="#">
-                            <span class="float-left">View Details</span>
-                            <span class="float-right">
-                            <i class="fas fa-angle-right"></i>
+                        <Link className="card-footer text-white clearfix small z-1" to="/contacts">
+                            <span class="float-left">Ver detalles</span>
+                                <span class="float-right">
+                                <i class="fas fa-angle-right"></i>
                             </span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
-            
-            <h1>Blank Page</h1>
-            <hr />
-            <p>This is a great starting point for new custom pages.</p>
-            <main className="container">
-                <section className="row">
-                    <div className="col-lg-8 col-md-10 mx-auto">
-                        {
-                            data.getPosts.map((post) => (
-                                <ClientPreview _id={post._id}
-                                    title={post.title}
-                                    author={post.author}
-                                    key={post._id}
-                                />
-                            ))
-                        }
-                    </div>
-                </section>
-            </main>
             </>
         </Layout>
         </>

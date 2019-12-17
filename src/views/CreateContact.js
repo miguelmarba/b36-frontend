@@ -8,8 +8,8 @@ import authHOC from '../utils/authHOC';
 import { Link } from 'react-router-dom';
 
 const CREATE_CONTACT = gql`
-    mutation createContact($contacto:ContactInput!){
-        createNewContact(data:$contacto){
+    mutation createContact($data:ContactInput!){
+        createNewContact(data:$data){
             _id
             first_name
             last_name
@@ -35,7 +35,7 @@ function CreateContact({history}){
     };
 
     const catchData = async (inputs) => {
-        const { data, errors} = await sendContact({variables:{data:{...inputs,cover}}}); 
+        const { data, errors} = await sendContact({variables:{data:{...inputs}}}); 
         if (data) history.push('/contacts');
         if(errors) alert(errors); 
     };
