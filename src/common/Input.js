@@ -9,7 +9,7 @@ function Input({label, type, placeholder, change, value, required, name}){
               name={name}
               type={type} 
               onChange={change}
-              value={value}
+              value={value || ''}
               className="form-control" 
               placeholder={placeholder} 
               required={required}/>

@@ -179,4 +179,5 @@ function EditContact({ match, history }){
     );
 };
 
-export default authHOC(EditContact);
+//export default authHOC(EditContact);
+export default EditContact;

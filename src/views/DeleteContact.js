@@ -66,4 +66,5 @@ function DeleteContact({match, history}){
     );
 };
 
-export default authHOC(DeleteContact);
+export default DeleteContact;
+//export default authHOC(DeleteContact);

@@ -165,4 +165,5 @@ function CreateContact({history}){
     );
 };
 
-export default authHOC(CreateContact);
+export default CreateContact;
+//export default authHOC(CreateContact);

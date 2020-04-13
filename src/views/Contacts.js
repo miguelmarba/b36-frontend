@@ -36,8 +36,8 @@ function Contacts(){
                     </div>
                 </div>
                 <div className="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <div className="table-responsive">
+                        <table className="table table-bordered" id="dataTable" width="100%">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
